@@ -40,7 +40,7 @@ milyutin-instant-indexer/
     ├── css/admin.css              # Admin settings page styles
     └── js/admin.js                # AJAX, progress bar, check buttons
 
-🔒 Security
+## 🔒 Security
 Settings API: All forms use settings_fields() (nonce) and options.php (capability checks).
 
 AJAX Security: All AJAX requests are protected by check_ajax_referer() and current_user_can( 'manage_options' ).
@@ -51,7 +51,7 @@ Safe Logging: Logs never contain secrets. Private keys, JWTs, and access tokens 
 
 File Protection: Log files are protected by .htaccess and index.php. The physical key file is restricted to /{key}.txt.
 
-❓ Troubleshooting
+## ❓ Troubleshooting
 Symptom	Cause & Solution
 IndexNow 403/404	Key file is inaccessible. Enable pretty permalinks, clear cache, or create a physical key file.
 IndexNow 422	URL doesn't belong to your site's domain. Check "Settings → General" and www prefix.
