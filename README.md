@@ -39,6 +39,7 @@ milyutin-instant-indexer/
 └── assets/
     ├── css/admin.css              # Admin settings page styles
     └── js/admin.js                # AJAX, progress bar, check buttons
+
 🔒 Security
 Settings API: All forms use settings_fields() (nonce) and options.php (capability checks).
 
