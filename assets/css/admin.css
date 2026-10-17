@@ -1,0 +1,595 @@
+/**
+ * Milyutin Instant Indexer — стили страницы настроек.
+ * Все правила ограничены обёрткой .mii-wrap, чтобы не влиять на другие страницы админки.
+ *
+ * @package Milyutin_Instant_Indexer
+ */
+
+.mii-wrap {
+	--mii-blue: #1d4ed8;
+	--mii-blue-dark: #1e3a8a;
+	--mii-green: #12855f;
+	--mii-green-bg: #e6f6ef;
+	--mii-red: #b32d2e;
+	--mii-red-bg: #fdecec;
+	--mii-amber: #9a6700;
+	--mii-amber-bg: #fff8e5;
+	--mii-vk: #0077ff;
+	--mii-border: #dcdcde;
+	--mii-muted: #646970;
+	--mii-bg: #fff;
+	--mii-radius: 10px;
+
+	max-width: 1240px;
+	margin-right: 20px;
+	color: #1d2327;
+}
+
+/* ── Шапка ───────────────────────────────────────────────────────────────── */
+
+.mii-header {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 22px 26px;
+	margin: 16px 0 20px;
+	border-radius: var(--mii-radius);
+	background: linear-gradient(120deg, #0f172a 0%, #1d4ed8 55%, #2563eb 100%);
+	color: #fff;
+	box-shadow: 0 6px 18px rgba(15, 23, 42, 0.18);
+}
+
+.mii-header h1 {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 0 6px;
+	padding: 0;
+	color: #fff;
+	font-size: 22px;
+	line-height: 1.2;
+}
+
+.mii-logo {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.16);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+}
+
+.mii-version {
+	padding: 2px 8px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.18);
+	font-size: 11px;
+	font-weight: 500;
+}
+
+.mii-header__desc {
+	max-width: 720px;
+	margin: 0;
+	color: rgba(255, 255, 255, 0.88);
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+.mii-header__author {
+	padding: 12px 16px;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	font-size: 13px;
+}
+
+.mii-header__author-name {
+	margin-bottom: 8px;
+	font-weight: 600;
+}
+
+.mii-header__links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.mii-header__links .mii-link {
+	display: inline-block;
+	padding: 4px 10px;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.16);
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+	transition: background 0.15s ease;
+}
+
+.mii-header__links .mii-link:hover,
+.mii-header__links .mii-link:focus {
+	background: rgba(255, 255, 255, 0.3);
+	color: #fff;
+}
+
+/* ── Сетка и карточки ───────────────────────────────────────────────────── */
+
+.mii-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.mii-card {
+	padding: 20px 22px;
+	background: var(--mii-bg);
+	border: 1px solid var(--mii-border);
+	border-radius: var(--mii-radius);
+	box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+.mii-card--help,
+.mii-card--author {
+	grid-column: 1 / -1;
+}
+
+.mii-card__head {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 14px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.mii-card__head h2 {
+	margin: 0;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+/* ── Метки статуса ──────────────────────────────────────────────────────── */
+
+.mii-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 3px 10px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.mii-badge--ok {
+	background: var(--mii-green-bg);
+	color: var(--mii-green);
+	border: 1px solid #b7e2cd;
+}
+
+.mii-badge--bad {
+	background: var(--mii-red-bg);
+	color: var(--mii-red);
+	border: 1px solid #f2c2c2;
+}
+
+.mii-dot {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin-right: 6px;
+	border-radius: 50%;
+	background: var(--mii-muted);
+}
+
+.mii-dot--ok {
+	background: var(--mii-green);
+	box-shadow: 0 0 0 3px rgba(18, 133, 95, 0.15);
+}
+
+/* ── Поля ───────────────────────────────────────────────────────────────── */
+
+.mii-field {
+	margin: 0 0 16px;
+}
+
+.mii-field > label {
+	display: block;
+	margin-bottom: 6px;
+	font-size: 13px;
+}
+
+.mii-field__row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+	margin: 0 0 8px;
+}
+
+.mii-field input[type="text"],
+.mii-field input[type="url"],
+.mii-field input[type="number"],
+.mii-field select,
+.mii-field textarea {
+	border-radius: 6px;
+}
+
+.mii-field input[type="text"]:focus,
+.mii-field input[type="url"]:focus,
+.mii-field textarea:focus,
+.mii-field select:focus {
+	border-color: var(--mii-blue);
+	box-shadow: 0 0 0 1px var(--mii-blue);
+	outline: 2px solid transparent;
+}
+
+.mii-switch {
+	display: flex;
+	gap: 8px;
+	align-items: flex-start;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.mii-switch input[type="checkbox"] {
+	margin-top: 2px;
+}
+
+.mii-checkboxes {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 18px;
+}
+
+.mii-checkbox {
+	display: inline-flex;
+	gap: 6px;
+	align-items: center;
+	font-size: 13px;
+}
+
+.mii-hint {
+	margin: 6px 0 0;
+	color: var(--mii-muted);
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+.mii-code {
+	display: inline-block;
+	padding: 5px 9px;
+	background: #f6f7f7;
+	border: 1px solid var(--mii-border);
+	border-radius: 5px;
+	word-break: break-all;
+}
+
+.mii-saved {
+	margin: 0;
+	font-size: 13px;
+}
+
+/* ── Предупреждения ─────────────────────────────────────────────────────── */
+
+.mii-alert {
+	margin: 0 0 16px;
+	padding: 12px 14px;
+	border-radius: 8px;
+	border-left: 4px solid var(--mii-blue);
+	background: #f0f6ff;
+	font-size: 12.5px;
+	line-height: 1.6;
+}
+
+.mii-alert--warn {
+	border-left-color: #dba617;
+	background: var(--mii-amber-bg);
+	color: #4b3b00;
+}
+
+.mii-alert--error {
+	border-left-color: var(--mii-red);
+	background: var(--mii-red-bg);
+	color: #5c1a1b;
+}
+
+/* ── Результаты операций ────────────────────────────────────────────────── */
+
+.mii-result {
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+	margin-top: 14px;
+	padding: 12px 14px;
+	border-radius: 8px;
+	border: 1px solid var(--mii-border);
+	background: #f6f7f7;
+	font-size: 12.5px;
+	line-height: 1.7;
+	word-break: break-word;
+}
+
+.mii-result[hidden] {
+	display: none;
+}
+
+.mii-result__icon {
+	flex: 0 0 20px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 20px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #fff;
+	background: var(--mii-muted);
+}
+
+.mii-result--ok {
+	border-color: #b7e2cd;
+	background: var(--mii-green-bg);
+}
+
+.mii-result--ok .mii-result__icon {
+	background: var(--mii-green);
+}
+
+.mii-result--error {
+	border-color: #f2c2c2;
+	background: var(--mii-red-bg);
+}
+
+.mii-result--error .mii-result__icon {
+	background: var(--mii-red);
+}
+
+.mii-result--info .mii-result__icon {
+	background: var(--mii-blue);
+}
+
+.mii-line {
+	display: block;
+}
+
+.mii-line--ok {
+	color: var(--mii-green);
+}
+
+.mii-line--error {
+	color: var(--mii-red);
+}
+
+/* ── Прогресс-бар ───────────────────────────────────────────────────────── */
+
+.mii-progress {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	margin: 10px 0;
+}
+
+.mii-progress[hidden] {
+	display: none;
+}
+
+.mii-progress__bar {
+	flex: 1 1 auto;
+	height: 12px;
+	border-radius: 999px;
+	background: #e5e7eb;
+	overflow: hidden;
+}
+
+.mii-progress__bar span {
+	display: block;
+	width: 0;
+	height: 100%;
+	border-radius: 999px;
+	background: linear-gradient(90deg, var(--mii-blue), #38bdf8);
+	transition: width 0.25s ease;
+}
+
+.mii-progress__text {
+	flex: 0 0 auto;
+	min-width: 120px;
+	font-size: 12px;
+	color: var(--mii-muted);
+}
+
+/* ── Таблица логов ──────────────────────────────────────────────────────── */
+
+.mii-table-wrap {
+	overflow-x: auto;
+}
+
+.mii-table {
+	margin: 0;
+	border-radius: 8px;
+	font-size: 12.5px;
+}
+
+.mii-table th {
+	font-weight: 600;
+}
+
+.mii-cell-url {
+	max-width: 280px;
+	word-break: break-all;
+}
+
+.mii-tag {
+	display: inline-block;
+	padding: 1px 7px;
+	border-radius: 999px;
+	background: #eef2ff;
+	color: var(--mii-blue-dark);
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.mii-tag--google {
+	background: #fef3c7;
+	color: #92400e;
+}
+
+.mii-tag--indexnow {
+	background: #e0f2fe;
+	color: #075985;
+}
+
+.mii-tag--system {
+	background: #f3f4f6;
+	color: #374151;
+}
+
+.mii-level {
+	display: inline-block;
+	margin-right: 6px;
+	font-weight: 600;
+}
+
+.mii-level--success {
+	color: var(--mii-green);
+}
+
+.mii-level--error {
+	color: var(--mii-red);
+}
+
+.mii-level--warning {
+	color: var(--mii-amber);
+}
+
+.mii-level--info {
+	color: var(--mii-muted);
+}
+
+/* ── Блок автора ────────────────────────────────────────────────────────── */
+
+.mii-author {
+	display: flex;
+	gap: 18px;
+	align-items: flex-start;
+}
+
+.mii-author__avatar {
+	flex: 0 0 64px;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(135deg, var(--mii-blue), #0ea5e9);
+	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.mii-author__name {
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.mii-author__role {
+	margin-bottom: 6px;
+	color: var(--mii-muted);
+	font-size: 12.5px;
+}
+
+.mii-author__links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 12px 0 0;
+}
+
+.mii-btn {
+	display: inline-block;
+	padding: 8px 16px;
+	border-radius: 7px;
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: 600;
+	transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.mii-btn:hover,
+.mii-btn:focus {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(16, 24, 40, 0.16);
+	color: #fff;
+}
+
+.mii-btn--primary {
+	background: var(--mii-blue);
+	color: #fff;
+}
+
+.mii-btn--vk {
+	background: var(--mii-vk);
+	color: #fff;
+}
+
+/* ── Инструкция ─────────────────────────────────────────────────────────── */
+
+.mii-card--help details {
+	margin-bottom: 12px;
+	padding: 12px 16px;
+	border: 1px solid var(--mii-border);
+	border-radius: 8px;
+	background: #fbfbfc;
+}
+
+.mii-card--help summary {
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 13.5px;
+	color: var(--mii-blue-dark);
+}
+
+.mii-steps {
+	margin: 12px 0 6px 18px;
+	font-size: 13px;
+	line-height: 1.75;
+}
+
+.mii-steps li {
+	margin-bottom: 6px;
+}
+
+.mii-steps code,
+.mii-hint code,
+.mii-result code {
+	padding: 1px 5px;
+	border-radius: 4px;
+	background: #f0f0f1;
+	font-size: 12px;
+}
+
+/* ── Адаптив ────────────────────────────────────────────────────────────── */
+
+@media screen and (max-width: 782px) {
+	.mii-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.mii-header {
+		padding: 18px;
+	}
+
+	.mii-author {
+		flex-direction: column;
+	}
+}
