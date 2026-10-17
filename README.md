@@ -39,3 +39,23 @@ milyutin-instant-indexer/
 └── assets/
     ├── css/admin.css              # Admin settings page styles
     └── js/admin.js                # AJAX, progress bar, check buttons
+```
+🔒 Security
+Settings API: All forms use settings_fields() (nonce) and options.php (capability checks).
+
+AJAX Security: All AJAX requests are protected by check_ajax_referer() and current_user_can( 'manage_options' ).
+
+Data Encryption: The Google service account JSON is stored in a separate option (autoload = false) encrypted via AES-256-CBC + HMAC-SHA256. Keys are derived from WordPress salts and are never exposed in the UI.
+
+Safe Logging: Logs never contain secrets. Private keys, JWTs, and access tokens are automatically masked.
+
+File Protection: Log files are protected by .htaccess and index.php. The physical key file is restricted to /{key}.txt.
+
+❓ Troubleshooting
+Symptom	Cause & Solution
+IndexNow 403/404	Key file is inaccessible. Enable pretty permalinks, clear cache, or create a physical key file.
+IndexNow 422	URL doesn't belong to your site's domain. Check "Settings → General" and www prefix.
+IndexNow 202	Key is still being verified. The plugin will automatically retry the request.
+Google 403	Service account email isn't added as an Owner in Search Console, or Web Search Indexing API isn't enabled.
+Google 429	Daily quota (200) exceeded. URLs will be queued and processed automatically later.
+"Failed to decrypt JSON"	WordPress salts changed in wp-config.php. Please re-upload the JSON key.
